@@ -108,12 +108,18 @@ object GlassManager {
         }
         cxrLink?.setCXRImageCbk(object : com.rokid.cxr.link.callbacks.IImageStreamCbk {
             override fun onImageReceived(data: ByteArray?) {
-                cxrLink?.setCXRImageCbk(null)
+                cxrLink?.setCXRImageCbk(object : com.rokid.cxr.link.callbacks.IImageStreamCbk {
+                    override fun onImageReceived(data: ByteArray?) {}
+                    override fun onImageError(code: Int, msg: String?) {}
+                })
                 callback(data)
             }
             override fun onImageError(code: Int, msg: String?) {
                 Log.e(TAG, "takePhoto error: code=$code msg=$msg")
-                cxrLink?.setCXRImageCbk(null)
+                cxrLink?.setCXRImageCbk(object : com.rokid.cxr.link.callbacks.IImageStreamCbk {
+                    override fun onImageReceived(data: ByteArray?) {}
+                    override fun onImageError(code: Int, msg: String?) {}
+                })
                 callback(null)
             }
         })
