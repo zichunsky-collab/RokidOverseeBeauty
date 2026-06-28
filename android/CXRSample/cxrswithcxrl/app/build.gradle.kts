@@ -63,16 +63,6 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.google.code.gson:gson:2.10.1")
 
-    // ViewModel Compose
-    implementation("androidx.lifecycle.viewmodel.compose:2.8.7")
 
-    // Activity Compose（用于 result launcher）
-    implementation("androidx.activity:activity-compose:1.9.3")
-
-    // Navigation Compose（多页面）
-    implementation("androidx.navigation:navigation-compose:2.8.5")
-
-    // Material Icons
-    implementation("androidx.compose.material:material-icons-extended")
 
 }
