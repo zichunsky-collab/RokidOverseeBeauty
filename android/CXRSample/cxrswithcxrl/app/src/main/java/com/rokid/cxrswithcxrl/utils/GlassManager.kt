@@ -51,7 +51,7 @@ object GlassManager {
             override fun onGlassAiAssistStart() {}
             override fun onGlassAiAssistStop() {}
             override fun onGlassAiInterrupt(interruptWake: Boolean) {}
-            override fun onGlassDeviceInfo(deviceInfo: com.rokid.cxr.link.utils.GlassInfo?) {}
+            override fun onGlassDeviceInfo(deviceInfo: com.rokid.cxr.link.utils.GlassInfo) {}
             override fun onGlassWearingStatus(wearing: Boolean) {}
         })
 
