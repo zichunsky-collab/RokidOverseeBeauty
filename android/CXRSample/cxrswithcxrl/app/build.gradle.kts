@@ -63,6 +63,9 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.google.code.gson:gson:2.10.1")
 
+    // Material Icons（拍照/问答/定位图标）
+    implementation("androidx.compose.material:material-icons-extended")
+
 
 
 }
