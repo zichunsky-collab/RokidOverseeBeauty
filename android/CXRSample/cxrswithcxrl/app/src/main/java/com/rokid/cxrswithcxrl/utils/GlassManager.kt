@@ -125,7 +125,10 @@ object GlassManager {
         })
         val success = cxrLink?.takePhoto(1024, 768, 80) ?: false
         if (!success) {
-            cxrLink?.setCXRImageCbk(null)
+            cxrLink?.setCXRImageCbk(object : com.rokid.cxr.link.callbacks.IImageStreamCbk {
+                override fun onImageReceived(data: ByteArray?) {}
+                override fun onImageError(code: Int, msg: String?) {}
+            })
             callback(null)
         }
     }
